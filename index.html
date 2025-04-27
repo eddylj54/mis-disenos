@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Diseños</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header, section, footer {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      animation: fadeInDown 1s ease-out;
+    }
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #333;
+      color: white;
+    }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenido a Mis Diseños</h1>
+    <p>Explora mi creatividad</p>
+  </header>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy un diseñador apasionado que crea arte visual para inspirar e impactar.</p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería de Diseños</h2>
+    <div class="gallery">
+      <img src="image_fx_ (20).jpg" alt="Diseño 1">
+      <img src="image_fx_ (21).jpg" alt="Diseño 2">
+      <img src="image_fx_ (22).jpg" alt="Diseño 3">
+      <img src="image_fx_ (23).jpg" alt="Diseño 4">
+      <img src="image_fx_ (24).jpg" alt="Diseño 5">
+      <img src="image_fx_ (25).jpg" alt="Diseño 6">
+      <img src="image_fx_ (26).jpg" alt="Diseño 7">
+      <img src="image_fx_ (27).jpg" alt="Diseño 8">
+    </div>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <p>¿Te gusta mi trabajo? ¡Contáctame para proyectos freelance!</p>
+  </section>
+
+  <footer>
+    <p>Contacto: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
+    <p>Sígueme en <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
