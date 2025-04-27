@@ -1,34 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mis Diseños</title>
+  <title>Mis Diseños - Tienda POD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #f0f0f0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
       color: #333;
       overflow-x: hidden;
     }
     header, section, footer {
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
     header {
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: url('https://images.unsplash.com/photo-1505685296765-3a2736de412f') no-repeat center center/cover;
       color: white;
-      animation: fadeInDown 1s ease-out;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    section {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      padding: 10px 0;
+      z-index: 1000;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
     }
     .gallery {
       display: grid;
@@ -39,84 +55,89 @@
     .gallery img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.5s;
     }
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
     footer {
-      background: #333;
+      background: #222;
       color: white;
+      padding: 40px 20px;
     }
-    a {
-      color: #ffd700;
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ffd700;
+      color: black;
+      border-radius: 30px;
       text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
+    a.button:hover {
+      background: #e6c200;
     }
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Bienvenido a Mis Diseños</h1>
-    <p>Explora mi creatividad</p>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#galeria">Colección</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <header id="inicio" data-aos="fade-zoom-in">
+    <h1>Diseños que inspiran</h1>
+    <p>Colecciones únicas para tu estilo</p>
+    <a href="#galeria" class="button">Ver Colección</a>
   </header>
 
-  <section id="sobre-mi">
+  <section id="sobre-mi" data-aos="fade-up">
     <h2>Sobre mí</h2>
-    <p>Soy un diseñador apasionado que crea arte visual para inspirar e impactar.</p>
+    <p>Hola, soy un artista visual especializado en transformar ideas en arte para camisetas y productos POD. Cada diseño cuenta una historia. ¡Descúbrela!</p>
   </section>
 
   <section id="galeria">
-    <h2>Galería de Diseños</h2>
+    <h2 data-aos="fade-right">Colección de Diseños</h2>
     <div class="gallery">
-      <img src="image_fx_ (20).jpg" alt="Diseño 1">
-      <img src="image_fx_ (21).jpg" alt="Diseño 2">
-      <img src="image_fx_ (22).jpg" alt="Diseño 3">
-      <img src="image_fx_ (23).jpg" alt="Diseño 4">
-      <img src="image_fx_ (24).jpg" alt="Diseño 5">
-      <img src="image_fx_ (25).jpg" alt="Diseño 6">
-      <img src="image_fx_ (26).jpg" alt="Diseño 7">
-      <img src="image_fx_ (27).jpg" alt="Diseño 8">
+      <img src="image_fx_ (20).jpg" alt="Diseño 1" data-aos="zoom-in">
+      <img src="image_fx_ (21).jpg" alt="Diseño 2" data-aos="zoom-in">
+      <img src="image_fx_ (22).jpg" alt="Diseño 3" data-aos="zoom-in">
+      <img src="image_fx_ (23).jpg" alt="Diseño 4" data-aos="zoom-in">
+      <img src="image_fx_ (24).jpg" alt="Diseño 5" data-aos="zoom-in">
+      <img src="image_fx_ (25).jpg" alt="Diseño 6" data-aos="zoom-in">
+      <img src="image_fx_ (26).jpg" alt="Diseño 7" data-aos="zoom-in">
+      <img src="image_fx_ (27).jpg" alt="Diseño 8" data-aos="zoom-in">
     </div>
   </section>
 
-  <section id="servicios">
+  <section id="servicios" data-aos="fade-up">
     <h2>Servicios</h2>
-    <p>¿Te gusta mi trabajo? ¡Contáctame para proyectos freelance!</p>
+    <p>¿Te gustaría tener un diseño único para tu marca o colección POD? Ofrezco diseños exclusivos y colaboraciones especiales.</p>
+    <a href="#contacto" class="button">Contáctame</a>
   </section>
 
-  <footer>
-    <p>Contacto: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
-    <p>Sígueme en <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+  <footer id="contacto">
+    <h2 data-aos="fade-up">Contacto</h2>
+    <p>¿Tienes un proyecto en mente o simplemente quieres saludar? ¡Estoy a un mensaje de distancia!</p>
+    <p>Email: <a href="mailto:tuemail@ejemplo.com" style="color:#ffd700">tuemail@ejemplo.com</a></p>
+    <p>Sígueme en <a href="#" style="color:#ffd700">Instagram</a></p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-      observer.observe(section);
+    AOS.init({
+      duration: 1200,
     });
   </script>
 
